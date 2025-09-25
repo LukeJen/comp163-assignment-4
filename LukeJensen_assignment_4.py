@@ -37,3 +37,31 @@ elif choice == "C":
         stress_level = stress_level + 20
 else: 
     print("Invalid")
+
+Easy_Classes = ["English", "History"]
+Medium_Classes =["Math","Chemistry", "Biology"]
+Hard_Classes = ["Programming", "Calculus", "Psychology"]
+all_classes = Easy_Classes + Medium_Classes + Hard_Classes
+
+print(f"Classes: Easy: {Easy_Classes} Medium: {Medium_Classes} Hard: {Hard_Classes}")
+Choosen_Classes = input("Pick Your Classes:")
+
+if Choosen_Classes in Easy_Classes and current_gpa <= 2.4:
+    study_hours = study_hours + 1
+    stress_level = stress_level + 2
+    social_points = social_points + 30
+    print("Put some EFFORT in it!")
+
+if Choosen_Classes in Medium_Classes and current_gpa >= 3.5:
+    study_hours = study_hours + 3
+    stress_level = stress_level + 5
+    social_points = social_points + 20
+    print("Taking on a challenge while maintaining a high GPA!")
+
+elif Choosen_Classes in Hard_Classes or Medium_Classes:
+    study_hours = study_hours + 8
+    stress_level = stress_level + 30
+    social_points = social_points + 10
+
+elif Choosen_Classes not in all_classes:
+    print("Invalid, Pick Your Classes!")
