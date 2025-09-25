@@ -1,3 +1,4 @@
+#Foundation
 student_name = "Luke Jensen"
 current_gpa = 3.9
 study_hours = 5
@@ -7,6 +8,7 @@ stress_level = 25
 print("Welcome, these are your Starting Stats", student_name, study_hours, social_points, stress_level)
 print("Choose Your Path: A(Easy), B(Medium), or C(Hard)")
 
+#Course Planning
 if choice == "A": 
     if current_gpa >= 3.5:
         study_hours = study_hours - 6
@@ -40,7 +42,7 @@ elif choice == "C":
         stress_level = stress_level + 20
 else: 
     print("Invalid")
-
+#Study Strat
 Easy_Classes = ["English", "History"]
 Medium_Classes =["Math","Chemistry", "Biology"]
 Hard_Classes = ["Programming", "Calculus", "Psychology"]
@@ -69,6 +71,7 @@ elif Choosen_Classes in Hard_Classes or Medium_Classes:
 elif Choosen_Classes not in all_classes:
     print("Invalid, Pick Your Classes!")
 
+#Final Assessment
 final_choice = None
 final_stats = study_hours, social_points, stress_level, current_gpa
 
