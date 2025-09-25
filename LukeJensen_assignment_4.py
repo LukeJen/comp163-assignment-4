@@ -5,6 +5,7 @@ social_points = 25
 stress_level = 25
 
 print("Welcome, these are your Starting Stats", student_name, study_hours, social_points, stress_level)
+print("Choose Your Path: A(Easy), B(Medium), or C(Hard)")
 
 if choice == "A": 
     if current_gpa >= 3.5:
@@ -15,6 +16,7 @@ if choice == "A":
         stress_level = stress_level - 20
     elif current_gpa < 2.4:
         print("Harder Path Recommened")
+        
 elif choice == "B": 
     if current_gpa >= 3.5: 
         study_hours = study_hours - 4
@@ -25,6 +27,7 @@ elif choice == "B":
     elif current_gpa < 2.4:
         study_hours = study_hours + 1
         stress_level = stress_level - 5
+        
 elif choice == "C": 
     if current_gpa >= 3.5:
         study_hours = study_hours + 8
@@ -65,3 +68,26 @@ elif Choosen_Classes in Hard_Classes or Medium_Classes:
 
 elif Choosen_Classes not in all_classes:
     print("Invalid, Pick Your Classes!")
+
+final_choice = None
+final_stats = study_hours, social_points, stress_level, current_gpa
+
+if final_choice is None:
+    final_choice = "Burnout Risk"
+
+if choice is not None and Choosen_Classes in all_classes:
+    if social_points > 40 and stress_level < 10:
+        final_choice = "Social Butterfly Scholar"
+        
+elif study_hours > 15 and stress_level < 40:
+        final_choice = "Dedicated Student"
+
+elif study_hours > 15 and stress_level > 40:
+        final_choice = "Extremely Hard Working Student"
+
+elif final_choice is not None:
+    print(f"Final Outcome: {final_choice}")
+else:
+    print("Final Outcome: Undetermined (Probably due to invalid initial choice).")
+
+print(f"Final Stats (Study Hours, Social Points, Stress Level, GPA): {final_stats}")
